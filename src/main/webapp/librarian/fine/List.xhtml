@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="./../librarianTemplate.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{returnFine.ListFineTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="pageContent">
+            <h3>Fine List</h3>
+            <p class="font-gray-dark">
+                
+            </p>
+            <div class="example-box">
+                <div class="example-code">
+                    <div>
+                        <h:panelGroup id="messagePanel"  layout="block" class="infobox infobox-close-wrapper info-bg mrg0A">
+                            <a href="#" title="Close" class="glyph-icon infobox-close icon-remove"></a>
+                            <h4 class="infobox-title">Messages</h4>
+                            <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            <h:outputText escape="false" value="#{returnFine.ListFineEmpty}" rendered="#{fineController.items.rowCount == 0}"/>
+                        </h:panelGroup>
+                    </div>
+                    <br/>
+                    <h:panelGroup rendered="#{fineController.items.rowCount > 0}">
+                        <h:dataTable class="table table-hover" id="example1" value="#{fineController.items}" var="item">
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{returnFine.ListFineTitle_fineId}"/>
+                                </f:facet>
+                                <h:outputText value="#{item.fineId}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{returnFine.ListFineTitle_totalLateDay}"/>
+                                </f:facet>
+                                <h:outputText value="#{item.totalLateDay}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{returnFine.ListFineTitle_fineRate}"/>
+                                </f:facet>
+                                <h:outputText value="#{item.fineRate}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{returnFine.ListFineTitle_fineAmount}"/>
+                                </f:facet>
+                                <h:outputText value="#{item.fineAmount}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{returnFine.ListFineTitle_studentId}"/>
+                                </f:facet>
+                                <h:outputText value="#{item.studentId}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="&nbsp;"/>
+                                </f:facet>
+                                <h:form>
+                                    <h:commandLink action="#{fineController.prepareView}" class="btn small bg-yellow tooltip-button" title="View">
+                                        <i class="glyph-icon icon-flag"></i>
+                                    </h:commandLink>
+                                    <h:outputText value=" "/>
+                                    <h:commandLink action="#{fineController.prepareEdit}" class="btn small bg-blue-alt tooltip-button" title="Edit">
+                                        <i class="glyph-icon icon-edit"></i>
+                                    </h:commandLink>
+                                    <h:outputText value=" "/>
+                                    <h:commandLink action="#{fineController.destroy}" class="btn small bg-red tooltip-button" title="Delete">
+                                        <i class="glyph-icon icon-remove"></i>
+                                    </h:commandLink>
+                                </h:form>
+                            </h:column>
+                        </h:dataTable>
+                    </h:panelGroup>
+                </div>
+            </div>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:composition>
+        <!-- Favicons -->
+        <link rel="shortcut icon" href="#{facesContext.externalContext.applicationContextPath}/resources/img/favicon.png" />
+        <!--[if lt IE 9]>
+          <script src="#{facesContext.externalContext.applicationContextPath}/resources/assets/js/minified/core/html5shiv.min.js"></script>
+          <script src="#{facesContext.externalContext.applicationContextPath}/resources/assets/js/minified/core/respond.min.js"></script>
+        <![endif]-->
+        <!-- Fides Admin CSS Core -->
+
+        <link rel="stylesheet" type="text/css" href="#{facesContext.externalContext.applicationContextPath}/resources/assets/css/minified/aui-production.min.css" />
+
+        <!-- Theme UI -->
+
+        <link rel="stylesheet" type="text/css" href="#{facesContext.externalContext.applicationContextPath}/resources/assets/themes/minified/fides/color-schemes/dark-blue.min.css" />
+
+        <!-- Fides Admin Responsive -->
+
+        <link rel="stylesheet" type="text/css" href="#{facesContext.externalContext.applicationContextPath}/resources/assets/themes/minified/fides/common.min.css" />
+        <link rel="stylesheet" type="text/css" href="#{facesContext.externalContext.applicationContextPath}/resources/assets/themes/minified/fides/responsive.min.css" />
+
+        <!-- Fides Admin JS -->
+
+        <script type="text/javascript" src="#{facesContext.externalContext.applicationContextPath}/resources/assets/js/minified/aui-production.min.js"></script>
+        <script>
+            jQuery(window).load(
+                function () {
+                    var wait_loading = window.setTimeout(function () {
+                        $('#loading').slideUp('fast');
+                            jQuery('body').css('overflow', 'auto');
+                        }, 1000);
+            });
+        </script>
+    </ui:composition>
+</html>
+

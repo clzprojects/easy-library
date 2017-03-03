@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="./../adminTemplate.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{adminMessage.CreateAppUserTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="pageContent">
+            <h3>Enter User Information</h3>
+            <p class="font-gray-dark">
+                User is help to login in application to manage information
+            </p>
+            <div class="example-box">
+                <div class="example-code">
+                    <div class="col-md-10 center-margin">
+                        <h:panelGroup id="messagePanel"  layout="block" class="infobox infobox-close-wrapper info-bg mrg0A">
+                            <a href="#" title="Close" class="glyph-icon infobox-close icon-remove"></a>
+                            <h4 class="infobox-title">Messages</h4>
+                            <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                        </h:panelGroup>
+                    </div>
+                    <br/>
+
+                    <h:form id="demo-form-2" class="col-md-10 center-margin">
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    User Name:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="username" value="#{appUserController.selected.username}" title="#{adminMessage.CreateAppUserTitle_username}" required="true" requiredMessage="#{adminMessage.CreateAppUserRequiredMessage_username}"/>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Password :
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="password" value="#{appUserController.selected.password}" title="#{adminMessage.CreateAppUserTitle_password}" required="true" requiredMessage="#{adminMessage.CreateAppUserRequiredMessage_password}"/>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    First Name:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="firstName" value="#{appUserController.selected.firstName}" title="#{adminMessage.CreateAppUserTitle_firstName}" required="true" requiredMessage="#{adminMessage.CreateAppUserRequiredMessage_firstName}"/>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Middle Name:
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="middleName"  value="#{appUserController.selected.middleName}" title="#{adminMessage.CreateAppUserTitle_middleName}" />
+
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Last Name:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="lastName" value="#{appUserController.selected.lastName}" title="#{adminMessage.CreateAppUserTitle_lastName}" required="true" requiredMessage="#{adminMessage.CreateAppUserRequiredMessage_lastName}"/>
+
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Email Address:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="email" value="#{appUserController.selected.email}" title="#{adminMessage.CreateAppUserTitle_email}" required="true" requiredMessage="#{adminMessage.CreateAppUserRequiredMessage_email}"/>
+
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Phone Number:
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="phoneNo" value="#{appUserController.selected.phoneNo}" title="#{adminMessage.CreateAppUserTitle_phoneNo}" />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    User Group:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:selectOneMenu id="userGroup" value="#{appUserController.userGroup}" required="true" requiredMessage="User Group is required">
+                                    <f:selectItem itemValue="Adminstrator"/>
+                                    <f:selectItem itemValue="Librarian"/>
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+                        <!--                        <div class="form-row">
+                                                    <div class="form-label col-md-2">
+                                                        <label for="">
+                                                            Picture:
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-input col-md-3">
+                                                        <h:inputFile id="picture" value="#{appUserController.selected.picture}" title="#{adminMessage.CreateAppUserTitle_picture}" />
+                                                    </div>
+                                                </div>-->
+                        <div class="divider"></div>
+                        <div class="form-row">
+                            <div class="form-input col-md-10 col-md-offset-2">
+                                <h:commandLink action="#{appUserController.create}" class="btn medium primary-bg radius-all-4" id="demo-form-2-valid">
+                                    <span class="button-content">
+                                        Save
+                                    </span>
+                                </h:commandLink>
+                            </div>
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+        </ui:define>
+    </ui:composition>
+
+</html>

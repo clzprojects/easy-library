@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <ui:composition>
+        <div id="page-sidebar" class="scrollable-content">
+            <div id="sidebar-menu">
+                <ul>
+                    <li>
+                        <h:link outcome="/librarian/librarianDashboard" title="Dashboard">
+                            <i class="glyph-icon icon-dashboard"></i>
+                            Dashboard
+                        </h:link>
+                    </li>
+                    <li>
+                        <a href="javascript:;" title="Book Category">
+                            <i class="glyph-icon icon-sitemap"></i>
+                            Book Category
+                        </a>
+                        <ul>
+                            <li>
+                                <h:link outcome="/librarian/bookCategory/List" title="Show Book Category">
+                                    <i class="glyph-icon icon-chevron-right"></i>
+                                    Show Book Categories
+                                </h:link>
+                            </li>
+                            <li>
+                                <h:link outcome="/librarian/bookCategory/Create" title="Add Book Category">
+                                    <i class="glyph-icon icon-chevron-right"></i>
+                                    Add Book Category
+                                </h:link>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" title="Book">
+                            <i class="glyph-icon icon-book"></i>
+                            Book
+                        </a>
+                        <ul>
+                            <li>
+                                <h:link outcome="/librarian/book/List" title="Show Book">
+                                    <i class="glyph-icon icon-chevron-right"></i>
+                                    Show Book
+                                </h:link>
+                            </li>
+                            <li>
+                                <h:link outcome="/librarian/book/Create" title="Add Book">
+                                    <i class="glyph-icon icon-chevron-right"></i>
+                                    Add Book
+                                </h:link>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" title="Student Category">
+                            <i class="glyph-icon icon-table"></i>
+                            Student Category
+                        </a>
+                        <ul>
+                            <li>
+                                <h:link outcome="/librarian/studentCategory/List" title="Show Student Categories">
+                                    <i class="glyph-icon icon-chevron-right"></i>
+                                    Show Student Categories
+                                </h:link>
+                            </li>
+                            <li>
+                                <h:link outcome="/librarian/studentCategory/Create" title="Add Student Category">
+                                    <i class="glyph-icon icon-chevron-right"></i>
+                                    Add Student Category
+                                </h:link>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" title="Student">
+                            <i class="glyph-icon icon-user"></i>
+                            Student
+                        </a>
+                        <ul>
+                            <li>
+                                <h:link outcome="/librarian/student/List" title="Show Student">
+                                    <i class="glyph-icon icon-chevron-right"></i>
+                                    Show Student
+                                </h:link>
+                            </li>
+                            <li>
+                                <h:link outcome="/librarian/student/Create" title="Add Student">
+                                    <i class="glyph-icon icon-chevron-right"></i>
+                                    Add Student
+                                </h:link>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" title="Student">
+                            <i class="glyph-icon icon-calendar"></i>
+                            Book Issue
+                        </a>
+                        <ul>
+                            <li>
+                                <h:link outcome="/librarian/bookIssue/List" title="Show Book Issue">
+                                    <i class="glyph-icon icon-chevron-right"></i>
+                                    Show Book Issue
+                                </h:link>
+                            </li>
+                            <li>
+                                <h:link outcome="/librarian/bookIssue/Create" title="Add Book Issue">
+                                    <i class="glyph-icon icon-chevron-right"></i>
+                                    Add Book Issue
+                                </h:link>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" title="Student">
+                            <i class="glyph-icon icon-barcode"></i>
+                            Book Return
+                        </a>
+                        <ul>
+                            <li>
+                                <h:link outcome="/librarian/issueReturn/List" title="Show Book Issue">
+                                    <i class="glyph-icon icon-chevron-right"></i>
+                                    Show Book Return
+                                </h:link>
+                            </li>
+                            <li>
+                                <h:link outcome="/librarian/issueReturn/Create" title="Add Book Issue">
+                                    <i class="glyph-icon icon-chevron-right"></i>
+                                    Add Book Return
+                                </h:link>
+                            </li>
+                        </ul>
+                    </li>
+<!--                    <li>
+                        <a href="javascript:;" title="Student">
+                            <i class="glyph-icon icon-weibo"></i>
+                            Fine
+                        </a>
+                        <ul>
+                            <li>
+                                <h:link outcome="/librarian/fine/List" title="Show Book Issue">
+                                    <i class="glyph-icon icon-chevron-right"></i>
+                                    Show Fine
+                                </h:link>
+                            </li>
+                        </ul>
+                    </li>-->
+                </ul>
+                <div class="divider mrg5T mobile-hidden"></div>
+            </div>
+        </div><!-- #page-sidebar -->
+    </ui:composition>
+</html>
+

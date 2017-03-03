@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <ui:composition>
+        <div id="page-sidebar" class="scrollable-content">
+            <div id="sidebar-menu">
+                <ul>
+                    <li>
+                        <h:link outcome="/admin/adminDashboard" title="Dashboard">
+                            <i class="glyph-icon icon-dashboard"></i>
+                            Dashboard
+                        </h:link>
+                    </li>
+                    <li>
+                        <a href="javascript:;" title="User">
+                            <i class="glyph-icon icon-user"></i>
+                            User
+                        </a>
+                        <ul>
+                            <li>
+                                <h:link outcome="/admin/appUser/List" title="User">
+                                    <i class="glyph-icon icon-chevron-right"></i>
+                                    Show User
+                                </h:link>
+                            </li>
+                            <li>
+                                <h:link outcome="/admin/appUser/Create" title="Add User">
+                                    <i class="glyph-icon icon-chevron-right"></i>
+                                    Add User
+                                </h:link>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="divider mrg5T mobile-hidden"></div>
+            </div>
+        </div><!-- #page-sidebar -->
+    </ui:composition>
+</html>
+

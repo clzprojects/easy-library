@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <ui:composition>
+        <div id="page-header" class="clearfix">
+            <div id="header-logo">
+                <a href="javascript:;" class="tooltip-button" data-placement="bottom" title="Close sidebar" id="close-sidebar">
+                    <i class="glyph-icon icon-caret-left"></i>
+                </a>
+                <a href="javascript:;" class="tooltip-button hidden" data-placement="bottom" title="Open sidebar" id="rm-close-sidebar">
+                    <i class="glyph-icon icon-caret-right"></i>
+                </a>
+                <a href="javascript:;" class="tooltip-button hidden" title="Navigation Menu" id="responsive-open-menu">
+                    <i class="glyph-icon icon-align-justify"></i>
+                </a>
+                #{message.app_name} <i class="opacity-80">#{message.app_version}</i>
+            </div>
+            <h:form>
+                <div class="user-profile dropdown">
+                    <a href="javascript:;" title="" class="user-ico clearfix" data-toggle="dropdown">
+                        <img width="36" src="#{facesContext.externalContext.applicationContextPath}/resources/assets/images/gravatar.jpg" alt="" />
+                        <span>#{loggedUser.firstName} #{loggedUser.middleName} #{loggedUser.lastName}</span>
+                        <i class="glyph-icon icon-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu float-right">
+                        <li>
+                            <a href="javascript:;" title="">
+                                <i class="glyph-icon icon-user mrg5R"></i>
+                                Account Details
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" title="">
+                                <i class="glyph-icon icon-cog mrg5R"></i>
+                                Edit Profile
+                            </a>
+                        </li>
+                        <li>
+                            <h:commandLink action="#{userBackingBean.logoutUser}">
+                                <i class="glyph-icon icon-signout font-size-13 mrg5R"></i>
+                                <span class="font-bold">Logout</span>
+                            </h:commandLink>
+                        </li>
+                    </ul>
+                </div>
+            </h:form>
+        </div><!-- #page-header -->
+    </ui:composition>
+</html>
+

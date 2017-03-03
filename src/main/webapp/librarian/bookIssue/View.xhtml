@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="./../librarianTemplate.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{librarianMessage.ViewBookIssueTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="pageContent">
+            <h3>Book Issue Information</h3>
+            <p class="font-gray-dark">
+
+            </p>
+            <div class="example-box">
+                <div class="example-code clearfix">
+                    <div class="row">
+                        <div class="col-md-10 center-margin">
+                            <h:panelGroup id="messagePanel"  layout="block" class="infobox infobox-close-wrapper info-bg mrg0A">
+                                <a href="#" title="Close" class="glyph-icon infobox-close icon-remove"></a>
+                                <h4 class="infobox-title">Messages</h4>
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-10 center-margin">
+                            <div class="content-box nav-list">
+                                <ul>
+                                    <li>
+                                        <a href="javascript:;" title="">
+                                            <i class="glyph-icon icon-chevron-right"></i>
+                                            Issue ID : &nbsp; 
+                                            <h:outputText value="#{bookIssueController.selected.issueId}" title="#{librarianMessage.ViewBookIssueTitle_issueId}"/>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" title="">
+                                            <i class="glyph-icon icon-chevron-right"></i>
+                                            Issue Date : &nbsp; 
+                                            <h:outputText value="#{bookIssueController.selected.issuedDate}" title="#{librarianMessage.ViewBookIssueTitle_issuedDate}">
+                                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                                            </h:outputText>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" title="">
+                                            <i class="glyph-icon icon-chevron-right"></i>
+                                            Book Return Date : &nbsp; 
+                                            <h:outputText value="#{bookIssueController.selected.issuedReturnDate}" title="#{librarianMessage.ViewBookIssueTitle_issuedReturnDate}">
+                                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                                            </h:outputText>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" title="">
+                                            <i class="glyph-icon icon-chevron-right"></i>
+                                            Book Id : &nbsp; 
+                                            <h:outputText value="#{bookIssueController.selected.bookId}" title="#{librarianMessage.ViewBookIssueTitle_bookId}"/>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" title="">
+                                            <i class="glyph-icon icon-chevron-right"></i>
+                                            Book Id : &nbsp; 
+                                            <h:outputText value="#{bookIssueController.selected.studentId}" title="#{bookIssue.ViewBookIssueTitle_studentId}"/>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+<!--                    <div class="row">
+                        <h:form class="col-md-10 center-margin">
+                            <br/>
+                            <div class="col-md-10 col-md-offset-2">
+                                <h:link outcome="Edit" class="btn medium primary-bg radius-all-4"  title="Edit">
+                                    <span class="button-content">
+                                        Edit
+                                    </span>
+                                </h:link>
+                                &nbsp;&nbsp;
+                                <h:commandLink action="#{bookIssueController.destroyAndView}" class="btn medium primary-bg radius-all-4"  title="Delete">
+                                    <span class="button-content">
+                                        Delete
+                                    </span>
+
+                                </h:commandLink>
+                            </div>
+                        </h:form>
+                    </div>-->
+                </div>
+            </div>
+        </ui:define>
+    </ui:composition>
+
+</html>

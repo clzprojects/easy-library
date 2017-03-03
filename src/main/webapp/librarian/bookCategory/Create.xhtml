@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <ui:composition template="./../librarianTemplate.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{librarianMessage.CreateBookCategoryTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="pageContent">
+            <h3>Enter Book Category Information</h3>
+            <p class="font-gray-dark">
+                Book category is help to manage books with their respective category.
+            </p>
+            <div class="example-box">
+                <div class="example-code">
+                    <div class="col-md-10 center-margin">
+                        <h:panelGroup id="messagePanel"  layout="block" class="infobox infobox-close-wrapper info-bg mrg0A">
+                            <a href="#" title="Close" class="glyph-icon infobox-close icon-remove"></a>
+                            <h4 class="infobox-title">Messages</h4>
+                            <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                        </h:panelGroup>
+                    </div>
+                    <br/>
+
+                    <h:form id="demo-form-2" class="col-md-10 center-margin">
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Category Name:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="categoryName" value="#{bookCategoryController.selected.categoryName}" title="#{librarianMessage.CreateBookCategoryTitle_categoryName}" required="true" requiredMessage="#{librarianMessage.CreateBookCategoryRequiredMessage_categoryName}"/>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Active:
+                                </label>
+                            </div>
+                            <div class="form-checkbox-radio col-md-1">
+                                <h:selectBooleanCheckbox id="isActive" value="#{bookCategoryController.selected.isActive}" title="#{librarianMessage.CreateBookCategoryTitle_isActive}"/>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="" class="label-description">
+                                    Description:
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputTextarea rows="4" cols="30" id="categoryDescription" value="#{bookCategoryController.selected.categoryDescription}" title="#{librarianMessage.CreateBookCategoryTitle_categoryDescription}" />
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="form-row">
+                            <div class="form-input col-md-10 col-md-offset-2">
+                                <h:commandLink action="#{bookCategoryController.create}" class="btn medium primary-bg radius-all-4" id="demo-form-2-valid">
+                                    <span class="button-content">
+                                        Save
+                                    </span>
+                                </h:commandLink>
+                            </div>
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+        </ui:define>
+    </ui:composition>
+
+</html>

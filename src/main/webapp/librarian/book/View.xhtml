@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="./../librarianTemplate.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{librarianMessage.ViewBookTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="pageContent">
+            <h3>Book Information</h3>
+            <p class="font-gray-dark">
+                
+            </p>
+            <div class="example-box">
+                <div class="example-code clearfix">
+                    <div class="row">
+                        <div class="col-md-10 center-margin">
+                            <h:panelGroup id="messagePanel"  layout="block" class="infobox infobox-close-wrapper info-bg mrg0A">
+                                <a href="#" title="Close" class="glyph-icon infobox-close icon-remove"></a>
+                                <h4 class="infobox-title">Messages</h4>
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-10 center-margin">
+                            <div class="content-box nav-list">
+                                <ul>
+                                    <li>
+                                        <a href="javascript:;" title="">
+                                            <i class="glyph-icon icon-chevron-right"></i>
+                                            Book ID : &nbsp; 
+                                            <h:outputText value="#{bookController.selected.bookId}" title="#{librarianMessage.ViewBookTitle_bookId}"/>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" title="">
+                                            <i class="glyph-icon icon-chevron-right"></i>
+                                            Book Title : &nbsp; 
+                                            <h:outputText value="#{bookController.selected.bookTitle}" title="#{librarianMessage.ViewBookTitle_bookTitle}"/>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" title="">
+                                            <i class="glyph-icon icon-chevron-right"></i>
+                                            Author Name : &nbsp; 
+                                            <h:outputText value="#{bookController.selected.authorName}" title="#{librarianMessage.ViewBookTitle_authorName}"/>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" title="">
+                                            <i class="glyph-icon icon-chevron-right"></i>
+                                            Publisher Name : &nbsp; 
+                                            <h:outputText value="#{bookController.selected.publisherName}" title="#{librarianMessage.ViewBookTitle_publisherName}"/>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" title="">
+                                            <i class="glyph-icon icon-chevron-right"></i>
+                                            Edition : &nbsp; 
+                                            <h:outputText value="#{bookController.selected.edition}" title="#{librarianMessage.ViewBookTitle_edition}"/>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" title="">
+                                            <i class="glyph-icon icon-chevron-right"></i>
+                                            Amount : &nbsp; 
+                                            <h:outputText value="#{bookController.selected.amount}" title="#{librarianMessage.ViewBookTitle_amount}"/>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" title="">
+                                            <i class="glyph-icon icon-chevron-right"></i>
+                                            Published Date : &nbsp; 
+                                            <h:outputText value="#{bookController.selected.publishedYear}" title="#{librarianMessage.ViewBookTitle_publishedYear}">
+                                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                                            </h:outputText>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" title="">
+                                            <i class="glyph-icon icon-chevron-right"></i>
+                                            No. Of Pages : &nbsp; 
+                                            <h:outputText value="#{bookController.selected.noOfPages}" title="#{librarianMessage.ViewBookTitle_noOfPages}"/>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" title="">
+                                            <i class="glyph-icon icon-chevron-right"></i>
+                                            Rack No. : &nbsp; 
+                                            <h:outputText value="#{bookController.selected.rackNo}" title="#{librarianMessage.ViewBookTitle_rackNo}"/>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" title="">
+                                            <i class="glyph-icon icon-chevron-right"></i>
+                                            Status : &nbsp; 
+                                            <h:outputText value="#{bookController.selected.status}" title="#{librarianMessage.ViewBookTitle_status}"/>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" title="">
+                                            <i class="glyph-icon icon-chevron-right"></i>
+                                            No. Of Books : &nbsp; 
+                                            <h:outputText value="#{bookController.selected.noOfBooks}" title="#{librarianMessage.ViewBookTitle_noOfBooks}"/>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" title="">
+                                            <i class="glyph-icon icon-chevron-right"></i>
+                                            Register At : &nbsp; 
+                                            <h:outputText value="#{bookController.selected.registeredAt}" title="#{librarianMessage.ViewBookTitle_registeredAt}">
+                                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                                            </h:outputText>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" title="">
+                                            <i class="glyph-icon icon-chevron-right"></i>
+                                            Category Name : &nbsp; 
+                                            <h:outputText value="#{bookController.selected.categoryName}" title="#{librarianMessage.ViewBookTitle_categoryName}"/>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" title="">
+                                            <i class="glyph-icon icon-chevron-right"></i>
+                                            Remarks : &nbsp; 
+                                            <h:outputText value="#{bookController.selected.remarks}" title="#{librarianMessage.ViewBookTitle_remarks}"/>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+<!--                    <div class="row">
+                        <h:form class="col-md-10 center-margin">
+                            <br/>
+                            <div class="col-md-10 col-md-offset-2">
+                                <h:link outcome="Edit" class="btn medium primary-bg radius-all-4"  title="Modify">
+                                    <span class="button-content">
+                                        Edit
+                                    </span>
+                                </h:link>
+                                &nbsp;&nbsp;
+                                <h:commandLink action="#{bookController.destroyAndView}" class="btn medium primary-bg radius-all-4"  title="Delete">
+                                    <span class="button-content">
+                                        Delete
+                                    </span>
+                                </h:commandLink>
+                            </div>
+                        </h:form>
+                    </div>-->
+                </div>
+            </div>
+        </ui:define>
+    </ui:composition>
+
+</html>

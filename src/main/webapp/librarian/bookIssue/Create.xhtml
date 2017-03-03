@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="./../librarianTemplate.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{librarianMessage.CreateBookIssueTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="pageContent">
+            <h3>Enter Book Issue Information</h3>
+            <p class="font-gray-dark">
+
+            </p>
+            <div class="example-box">
+                <div class="example-code">
+                    <div class="col-md-10 center-margin">
+                        <h:panelGroup id="messagePanel"  layout="block" class="infobox infobox-close-wrapper info-bg mrg0A">
+                            <a href="#" title="Close" class="glyph-icon infobox-close icon-remove"></a>
+                            <h4 class="infobox-title">Messages</h4>
+                            <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                        </h:panelGroup>
+                    </div>
+                    <br/>
+
+                    <h:form id="demo-form-2" class="col-md-10 center-margin">
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Issue ID:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="issueId" value="#{bookIssueController.selected.issueId}" title="#{librarianMessage.CreateBookIssueTitle_issueId}" required="true" requiredMessage="#{librarianMessage.CreateBookIssueRequiredMessage_issueId}"/>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Issue Date:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="issuedDate" autocomplete="off" class="datepicker"  value="#{bookIssueController.selected.issuedDate}" title="#{librarianMessage.CreateBookIssueTitle_issuedDate}" >
+                                    <f:convertDateTime pattern="MM/dd/yyyy" />
+                                </h:inputText>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Return Date:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="issuedReturnDate" autocomplete="off" class="datepicker"  value="#{bookIssueController.selected.issuedReturnDate}" title="#{librarianMessage.CreateBookIssueTitle_issuedReturnDate}" >
+                                    <f:convertDateTime pattern="MM/dd/yyyy" />
+                                </h:inputText>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Book ID:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:selectOneMenu id="bookId" value="#{bookIssueController.selected.bookId}" title="#{librarianMessage.CreateBookIssueTitle_bookId}" required="true" requiredMessage="#{librarianMessage.CreateBookIssueRequiredMessage_bookId}">
+                                    <f:selectItems value="#{bookController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>        
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Student ID:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:selectOneMenu id="studentId" value="#{bookIssueController.selected.studentId}" title="#{bookIssue.CreateBookIssueTitle_studentId}" required="true" requiredMessage="#{bookIssue.CreateBookIssueRequiredMessage_studentId}">
+                                    <f:selectItems value="#{studentController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>        
+                            </div>
+                        </div>
+
+                        <div class="divider"></div>
+                        <div class="form-row">
+                            <div class="form-input col-md-10 col-md-offset-2">
+                                <h:commandLink action="#{bookIssueController.create}" class="btn medium primary-bg radius-all-4" id="demo-form-2-valid">
+                                    <span class="button-content">
+                                        Save
+                                    </span>
+                                </h:commandLink>
+                            </div>
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+        </ui:define>
+    </ui:composition>
+
+</html>

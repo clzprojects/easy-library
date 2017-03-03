@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Easy Library | <ui:insert name="title"/></title>
+        <ui:include src="../resources/assets/assetLoader.xhtml"/>
+    </h:head>
+    <h:body style="overflow: hidden;">
+        <div id="loading" class="ui-front loader ui-widget-overlay bg-white opacity-100">
+            <img src="#{facesContext.externalContext.applicationContextPath}/resources/assets/images/loader-dark.gif" alt="" />
+        </div>
+
+        <div id="page-wrapper" class="demo-example">
+            <ui:include src="common/header.xhtml"/>
+            <ui:include src="common/sideNavigation.xhtml"/>
+            <div id="page-content-wrapper">
+                <div id="page-title">
+                    <h3>
+                        Easy Library <i class="glyph-icon icon-chevron-right"></i> Admin Panel
+                        <small></small>
+                    </h3>
+<!--                    <div id="breadcrumb-right">
+                        <div id="sidebar-search">
+                            <input type="text" placeholder="Search..." class="autocomplete-input input tooltip-button" data-placement="bottom" title="Type &apos;jav&apos; to see the available tags..." id="" name="" />
+                            <i class="glyph-icon icon-search"></i>
+                        </div>
+                    </div>-->
+                </div> <!-- #page-title --> 
+
+                <div id="page-content">
+                    <ui:insert name="pageContent"/>
+                </div><!-- #page-content -->
+            </div><!-- #page-main -->
+        </div><!-- #page-wrapper -->
+    </h:body>
+</html>
+

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="./../librarianTemplate.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{librarianMessage.CreateBookTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="pageContent">
+            <h3>Enter Book Information</h3>
+            <p class="font-gray-dark">
+                Book is help to recognize book in library.
+            </p>
+            <div class="example-box">
+                <div class="example-code">
+                    <div class="col-md-10 center-margin">
+                        <h:panelGroup id="messagePanel"  layout="block" class="infobox infobox-close-wrapper info-bg mrg0A">
+                            <a href="#" title="Close" class="glyph-icon infobox-close icon-remove"></a>
+                            <h4 class="infobox-title">Messages</h4>
+                            <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                        </h:panelGroup>
+                    </div>
+                    <br/>
+
+                    <h:form id="demo-form-2" class="col-md-10 center-margin">
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Book ID:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="bookId" value="#{bookController.selected.bookId}" title="#{librarianMessage.CreateBookTitle_bookId}" required="true" requiredMessage="#{librarianMessage.CreateBookRequiredMessage_bookId}"/>
+
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Book Title:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="bookTitle" value="#{bookController.selected.bookTitle}" title="#{librarianMessage.CreateBookTitle_bookTitle}" required="true" requiredMessage="#{librarianMessage.CreateBookRequiredMessage_bookTitle}"/>
+
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Author Name:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="authorName" value="#{bookController.selected.authorName}" title="#{librarianMessage.CreateBookTitle_authorName}" required="true" requiredMessage="#{librarianMessage.CreateBookRequiredMessage_authorName}"/>
+
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Publisher Name:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="publisherName" value="#{bookController.selected.publisherName}" title="#{librarianMessage.CreateBookTitle_publisherName}" required="true" requiredMessage="#{librarianMessage.CreateBookRequiredMessage_publisherName}"/>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Status:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:selectOneMenu id="status" value="#{bookController.selected.status}" title="#{librarianMessage.CreateBookTitle_status}" required="true" requiredMessage="#{librarianMessage.CreateBookRequiredMessage_status}">
+                                    <f:selectItem itemValue="Available"/>
+                                    <f:selectItem itemValue="Not Available"/>
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Rack No:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="rackNo" value="#{bookController.selected.rackNo}" title="#{librarianMessage.CreateBookTitle_rackNo}" required="true" requiredMessage="#{librarianMessage.CreateBookRequiredMessage_rackNo}"/>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Edition:
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="edition" value="#{bookController.selected.edition}" title="#{librarianMessage.CreateBookTitle_edition}" required="true" requiredMessage="#{librarianMessage.CreateBookRequiredMessage_edition}"/>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Amount:
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="amount" value="#{bookController.selected.amount}" title="#{librarianMessage.CreateBookTitle_amount}" required="true" requiredMessage="#{librarianMessage.CreateBookRequiredMessage_amount}"/>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Published Date:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="publishedYear"  autocomplete="off" class="datepicker" value="#{bookController.selected.publishedYear}" title="#{librarianMessage.CreateBookTitle_publishedYear}" >
+                                    <f:convertDateTime pattern="MM/dd/yyyy" />
+                                </h:inputText>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    No. Of Pages:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="noOfPages" value="#{bookController.selected.noOfPages}" title="#{librarianMessage.CreateBookTitle_noOfPages}" required="true" requiredMessage="#{librarianMessage.CreateBookRequiredMessage_noOfPages}"/>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Book No.:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="noOfBooks" value="#{bookController.selected.noOfBooks}" title="#{librarianMessage.CreateBookTitle_noOfBooks}" required="true" requiredMessage="#{librarianMessage.CreateBookRequiredMessage_noOfBooks}"/>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Register At:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="registeredAt" autocomplete="off" class="datepicker" value="#{bookController.selected.registeredAt}" title="#{librarianMessage.CreateBookTitle_registeredAt}" >
+                                    <f:convertDateTime pattern="MM/dd/yyyy" />
+                                </h:inputText>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Category Name:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:selectOneMenu id="categoryName" value="#{bookController.selected.categoryName}" title="#{librarianMessage.CreateBookTitle_categoryName}" required="true" requiredMessage="#{librarianMessage.CreateBookRequiredMessage_categoryName}">
+                                    <f:selectItems value="#{bookCategoryController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Remarks:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputTextarea rows="4" cols="30" id="remarks" value="#{bookController.selected.remarks}" title="#{librarianMessage.CreateBookTitle_remarks}" />
+                            </div>
+                        </div>
+
+
+                        <div class="divider"></div>
+                        <div class="form-row">
+                            <div class="form-input col-md-10 col-md-offset-2">
+                                <h:commandLink action="#{bookController.create}" class="btn medium primary-bg radius-all-4" id="demo-form-2-valid" >
+                                    <span class="button-content">
+                                        Save
+                                    </span>
+                                </h:commandLink>
+                            </div>
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+        </ui:define>
+    </ui:composition>
+
+</html>

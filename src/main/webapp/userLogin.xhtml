@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <body>
+        <ui:composition template="./template.xhtml">
+
+            <ui:define name="title">
+                Login
+            </ui:define>
+
+            <ui:define name="pageContent">
+                <div class="pad20A">
+                    <div class="row">
+                        <div class="clear"></div>
+                        <form method="post" action="j_security_check"  class="col-md-3 center-margin form-vertical mrg25T">
+                            <div class="pad10A" >
+                                <span class="badge mrg25L" title="" data-original-title="Easy Library" style="height: 200px; width: 200px;">
+                                    <img src="#{facesContext.externalContext.applicationContextPath}/resources/img/easy_library_logo_200x201.png" width="150" height="151" style="margin-top: 35px; margin-left: 20px;"/>       
+                                </span>
+                            </div>
+                            <div id="login-form" class="content-box">
+                                <h3 class="content-box-header ui-state-default">
+                                    <span><strong>Login</strong></span>
+                                </h3>
+                                <div class="content-box-wrapper pad20A pad0B">
+                                    <div class="form-row">
+                                        <div class="form-label col-md-2">
+                                            <label for="username">
+                                                Username
+                                                <span class="required">*</span>
+                                            </label>
+                                        </div>
+                                        <div class="form-input col-md-10">
+                                            <div class="form-input-icon">
+                                                <i class="glyph-icon icon-user ui-state-default"></i>
+                                                <input id="username" name="j_username" type="text"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-label col-md-2">
+                                            <label for="password">
+                                                Password
+                                                <span class="required">*</span>
+                                            </label>
+                                        </div>
+                                        <div class="form-input col-md-10">
+                                            <div class="form-input-icon">
+                                                <i class="glyph-icon icon-unlock-alt ui-state-default"></i>
+                                                <input id="password" name="j_password" type="password" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="button-pane text-center">
+                                    <input value="Login" class="btn large primary-bg text-transform-upr font-size-11" type="submit"/>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>
+

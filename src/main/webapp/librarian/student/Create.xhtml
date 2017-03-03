@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="./../librarianTemplate.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{librarianMessage.CreateStudentTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="pageContent">
+            <h3>Enter Student Information</h3>
+            <p class="font-gray-dark">
+                
+            </p>
+            <div class="example-box">
+                <div class="example-code">
+                    <div class="col-md-10 center-margin">
+                        <h:panelGroup id="messagePanel"  layout="block" class="infobox infobox-close-wrapper info-bg mrg0A">
+                            <a href="#" title="Close" class="glyph-icon infobox-close icon-remove"></a>
+                            <h4 class="infobox-title">Messages</h4>
+                            <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                        </h:panelGroup>
+                    </div>
+                    <br/>
+
+                    <h:form id="demo-form-2" class="col-md-10 center-margin">
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Student ID:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="studentId" value="#{studentController.selected.studentId}" title="#{librarianMessage.CreateStudentTitle_studentId}" required="true" requiredMessage="#{librarianMessage.CreateStudentRequiredMessage_studentId}"/>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Student Name:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="studentName" value="#{studentController.selected.studentName}" title="#{librarianMessage.CreateStudentTitle_studentName}" required="true" requiredMessage="#{librarianMessage.CreateStudentRequiredMessage_studentName}"/>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Gender:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="gender" value="#{studentController.selected.gender}" title="#{librarianMessage.CreateStudentTitle_gender}" required="true" requiredMessage="#{librarianMessage.CreateStudentRequiredMessage_gender}"/>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Current Address:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="currentAddress" value="#{studentController.selected.currentAddress}" title="#{librarianMessage.CreateStudentTitle_currentAddress}" required="true" requiredMessage="#{librarianMessage.CreateStudentRequiredMessage_currentAddress}"/>
+
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Email Address:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="email" value="#{studentController.selected.email}" title="#{librarianMessage.CreateStudentTitle_email}" required="true" requiredMessage="#{librarianMessage.CreateStudentRequiredMessage_email}"/>
+
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Phone Number:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="phoneNo" value="#{studentController.selected.phoneNo}" title="#{librarianMessage.CreateStudentTitle_phoneNo}" required="true" requiredMessage="#{librarianMessage.CreateStudentRequiredMessage_phoneNo}"/>
+
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Class Level:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="classLevel" value="#{studentController.selected.classLevel}" title="#{librarianMessage.CreateStudentTitle_classLevel}" required="true" requiredMessage="#{librarianMessage.CreateStudentRequiredMessage_classLevel}"/>
+
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Batch Year:
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="batchYear" value="#{studentController.selected.batchYear}" title="#{librarianMessage.CreateStudentTitle_batchYear}" required="true" requiredMessage="#{librarianMessage.CreateStudentRequiredMessage_batchYear}"/>
+
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Year / Semester:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="yearOrSemester" value="#{studentController.selected.yearOrSemester}" title="#{librarianMessage.CreateStudentTitle_yearOrSemester}" required="true" requiredMessage="#{librarianMessage.CreateStudentRequiredMessage_yearOrSemester}"/>
+
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Class Section:
+
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="classSection" value="#{studentController.selected.classSection}" title="#{librarianMessage.CreateStudentTitle_classSection}" />
+
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Status:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="status" value="#{studentController.selected.status}" title="#{librarianMessage.CreateStudentTitle_status}" required="true" requiredMessage="#{librarianMessage.CreateStudentRequiredMessage_status}"/>
+
+                            </div>
+                        </div>
+<!--                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Picture:
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:inputText id="picture" value="#{studentController.selected.picture}" title="#{librarianMessage.CreateStudentTitle_picture}" />
+
+                            </div>
+                        </div>-->
+                        <div class="form-row">
+                            <div class="form-label col-md-2">
+                                <label for="">
+                                    Category Name:
+                                    <span class="required">*</span>
+                                </label>
+                            </div>
+                            <div class="form-input col-md-10">
+                                <h:selectOneMenu id="categoryName" value="#{studentController.selected.categoryName}" title="#{librarianMessage.CreateStudentTitle_categoryName}" required="true" requiredMessage="#{librarianMessage.CreateStudentRequiredMessage_categoryName}">
+                                    <f:selectItems value="#{studentCategoryController.itemsAvailableSelectOne}"/>
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+
+                        <div class="divider"></div>
+                        <div class="form-row">
+                            <div class="form-input col-md-10 col-md-offset-2">
+                                <h:commandLink action="#{studentController.create}" class="btn medium primary-bg radius-all-4" id="demo-form-2-valid">
+                                    <span class="button-content">
+                                        Save
+                                    </span>
+                                </h:commandLink>
+                            </div>
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+        </ui:define>
+    </ui:composition>
+
+</html>

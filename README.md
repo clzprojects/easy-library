@@ -1,1 +1,1 @@
-# easy-library
+# Easy Library
